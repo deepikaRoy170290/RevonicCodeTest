@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script   defer
+              src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+              integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+              crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="store.js" aync></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="row">
+            
+                <div class="col-md-8">
+                    <h2>Mr. Bolat</h2>
+                    <p>Al Oasis Mall, Deira
+                        <br/>
+                        4 Stars
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="row filterSearch">
+                        <div class="col-md-4">
+                            <a onclick="filterToggle()" class="toggleFilter">
+                                <img src="images/filter.JPG"/>
+                                <span>Filter</span>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a onclick="searchToggle()" class="searchIcon">
+                                <i class="fas fa-search"></i>
+                                <span>Search</span>
+                                <div id="toggleInput">
+                                    <input type="text" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+        <div class="row">
+            <div id="filterItem">
+                <ul>
+                    <a href="#"><li onclick="filterOnChoiceOrder('rating')">Top Rated</li></a>
+                    <a href="#"><li onclick="filterBytype('non-veg')">Non-Veg</li></a>
+                    <a href="#"><li onclick="filterBytype('veg')">Veg</li></a>
+                    <a href="#"><li onclick="filterByCalories('calories')">Low Calories</li></a>
+                    <a href="#"><li onclick="filterByQuick('quick')">Quickies</li></a>
+                    <a href="#"><li onclick="filterByHot()">Hot</li></a>
+                    <a href="#"><li onclick="filterBySpicy()">Spicy</li></a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <ul class="catagoriesList" id="catagoriesList">
+            <li onclick="catAll()"><a href="#">All Products</a></li>
+            <li onclick="catBest('Best Seller')"><a href="#">Best Sellers</a></li>
+            <li onclick="catPizza('pizza')"><a href="#">Pizza</a></li>
+            <li onclick="catsteak('Steaks')"><a href="#">Steaks</a></li>
+            <li onclick="catKababs('Kababs')"><a href="#">Kababs</a></li>
+            <li onclick="catSnack('Snacks')"><a href="#">Snacks</a></li>
+            <li onclick="catMain('Main Course')"><a href="#">Main Course</a></li>
+            <li onclick="catBurger('Burger')"><a href="#">Burger</a></li>
+            <li onclick="catWraps('Wraps')"><a href="#">Wraps</a></li>
+            <li onclick="catBev('Beverage')"><a href="#">Beverage</a></li>
+        </ul>
+    <hr/>
+    <div class="row" id="listOfProducts"></div>
+    <button class="checkoutBtn col-md-6 offset-md-3" data-toggle="modal" data-target="#exampleModal">Swipe to checkout</button>
+<!--Model-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <section class="container content-section">
+                <div class="cart-items"></div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">0</span>
+                </div>
+                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            </section>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+
+
+
+
+<script src="script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
